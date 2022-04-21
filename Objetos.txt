@@ -1,0 +1,53 @@
+ var jugador1 = new Jugador("Camilo", "2251848", "Diurna", true);
+            var jugador2 = new Jugador("Luis", "2251848", "Diurna", true);
+            var jugador3 = new Jugador("Juan", "2251848", "Diurna", true);
+            var jugador4 = new Jugador("Pablo", "2251848", "Diurna", true);
+            var jugador5 = new Jugador("Miguel", "2251848", "Diurna", true);
+            var jugador6 = new Jugador("Lucas", "2251848", "Diurna", true);
+            var jugador7 = new Jugador("Alverto", "2251848", "Diurna", true);
+            var jugador8 = new Jugador("Will", "2251848", "Diurna", true);
+
+            var team1 = new Equipo("Equipo 1", DateTime.Now, new List<Jugador> { jugador1, jugador2 });
+            var team2 = new Equipo("Equipo 2", DateTime.Now, new List<Jugador> { jugador3, jugador4 });
+            var team3 = new Equipo("Equipo 3", DateTime.Now, new List<Jugador> { jugador5, jugador6 });
+            var team4 = new Equipo("Equipo 4", DateTime.Now, new List<Jugador> { jugador7, jugador8 });
+            var team5 = new Equipo("Equipo 5", DateTime.Now, new List<Jugador> { jugador7, jugador8 });
+            var team6 = new Equipo("Equipo 6", DateTime.Now, new List<Jugador> { jugador7, jugador8 });
+            var team7 = new Equipo("Equipo 7", DateTime.Now, new List<Jugador> { jugador7, jugador8 });
+            var team8 = new Equipo("Equipo 8", DateTime.Now, new List<Jugador> { jugador7, jugador8 });
+
+            var champions = new Torneo(DateTime.Now, "Warzone", new List<Equipo> { team1, team2, team3, team4, team5, team6, team7, team8 });
+
+            var enfrentamiento1 = new Enfrentamientos(champions.equipos);
+
+            var objects = "";
+            var object2 = "";
+
+            foreach (var i in enfrentamiento1.grupo_a)
+            {
+                objects += $"{i.nombre} (";
+
+                foreach (var j in i.jugadores)
+                {
+                    objects += $"{j.nombre} ";
+                }
+
+                objects += $")";
+            }
+
+            foreach (var i in enfrentamiento1.grupo_b)
+            {
+                object2 += $"{i.nombre} (";
+
+                foreach (var j in i.jugadores)
+                {
+                    object2 += $"{j.nombre} ";
+                }
+                object2 += $")";
+            }
+
+            return Ok(new {
+                    grupo1 = objects,
+                    grupo2 = object2
+            }
+            );
