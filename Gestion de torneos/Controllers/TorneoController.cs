@@ -55,6 +55,7 @@ namespace Gestion_de_torneos.Controllers
         [HttpDelete("{id}")]
         public string Delete(int id)
         {
+
             string sql = $"delete from torneos where id={id};";
             string result = _db.executeSql(sql);
             return result;
