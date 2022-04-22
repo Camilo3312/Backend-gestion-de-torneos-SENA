@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gLmBR/bs1EQvdTS417MgRCUIoSZHSgC5fgr/9NT2n9+aFo3mJwPa84KwEgxPVj0b9aGWB3EbSCAoXZlANiB4Ww==",
+  "dgSpecHash": "0jOK2XKdHBAPEq/xxdv0eJ13ZB0sb9b6lj9NLhPRduXgJRq3fGVyh00Pch8EVPcOk+aU3weou5XyvMAleLdRAQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\adsi\\Desktop\\TorneoSena\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj",
+  "projectFilePath": "C:\\Users\\adsi\\Desktop\\Nueva carpeta\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adsi\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\adsi\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",

@@ -1,47 +1,39 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Backend_API_Torneos.Models;
+using Gestion_de_torneos.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using work4hours_modules_backend.Models;
 
 namespace Gestion_de_torneos.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class EquiposController : ControllerBase
     {
-        // GET: api/<EquiposController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        MySqlDatabase _db = new MySqlDatabase();
 
-        // GET api/<EquiposController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            var query = @"select * from equipos
+                          where torneo = @id
+                        ";
+            var response = _db.Get(query, new { id = id });
+            return Ok(response);
         }
 
-        // POST api/<EquiposController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<IActionResult> Post([FromBody] EquipoData equipo)
         {
-        }
-
-        // PUT api/<EquiposController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<EquiposController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            var query = @"insert into equipos
+                          (jornada, torneo, goles_recibidos, porterias_imbatidas, cantidadfaltas, partidos_ganados, partidos_perdidos)
+                          values (@jornada, @torneo, @goles_recibidos, @porterias_imbatidas, @cantidadfaltas, @partidos_ganados, @partidos_perdidos)
+                        ";
+            var response = _db.Post(query, equipo);
+            return Ok(await response);
         }
     }
 }
