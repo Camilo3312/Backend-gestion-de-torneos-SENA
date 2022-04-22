@@ -9,8 +9,8 @@ namespace Backend_API_Torneos.Models
         private string _nombre;
         public string nombre { set { _nombre = value; } get { return _nombre; } }
 
-        private DateTime _fecha;
-        public DateTime fecha { set { _fecha = value; } get { return _fecha; } }
+        private string _fecha;
+        public string fecha { set { _fecha = value; } get { return _fecha; } }
 
         private double _puntuacion;
         public double puntuacion { set { _puntuacion = value; } get { return _puntuacion; } }
@@ -21,7 +21,7 @@ namespace Backend_API_Torneos.Models
         private List<Jugador> _jugadores;
         public List<Jugador> jugadores { set { _jugadores = value; } get { return _jugadores; } }
 
-        public Equipo(string nombre, DateTime fecha, List<Jugador> jugadores)
+        public Equipo(string nombre, string fecha, List<Jugador> jugadores)
         {
             this.nombre = nombre; 
             this.fecha = fecha;

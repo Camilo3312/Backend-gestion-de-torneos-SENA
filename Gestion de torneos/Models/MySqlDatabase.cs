@@ -1,6 +1,8 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Dapper;
+using MySql.Data.MySqlClient;
 using Nancy.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -68,6 +70,18 @@ namespace work4hours_modules_backend.Models
                     return serializer.Serialize(rows);
                 }
             }
+        }
+
+        public  IEnumerable Get(string query, object datas = null)
+        {          
+            return connection.Query(query, datas);           
+        }
+
+        public async Task<bool> Post(string query, object datas = null)
+        {          
+            var response = connection.ExecuteAsync(query, datas);
+            return await response > 0;
+       
         }
     }
 }
