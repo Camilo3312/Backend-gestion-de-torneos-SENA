@@ -1,4 +1,6 @@
-﻿namespace Gestion_de_torneos.Models.Entities
+﻿using Web_API;
+
+namespace Gestion_de_torneos.Models.Entities
 {
     public class UsuarioAdmin
     {
@@ -9,6 +11,6 @@
         public string correo { set { _correo = value; } get { return _correo;} }
 
         private string _contrasenna;
-        public string contrasenna { set { _contrasenna = value; } get { return _contrasenna;} } 
+        public string contrasenna { set { _contrasenna = Encrypt.GetSHA256(value); } get { return _contrasenna;} } 
     }
 }

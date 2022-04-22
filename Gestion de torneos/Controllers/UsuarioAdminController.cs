@@ -1,6 +1,7 @@
 ﻿using Gestion_de_torneos.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using Web_API;
 using work4hours_modules_backend.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -15,9 +16,9 @@ namespace Gestion_de_torneos.Controllers
         UsuarioAdmin _usuarioadmin = new UsuarioAdmin();
         // GET: api/<UsuarioAdminController>
         [HttpGet]
-        public string Get([FromQuery] string correo, string contrasenna)
+        public string Get([FromQuery] UsuarioAdmin usuarioAdmin)
         {
-            string sql = $"select * from usuarioadmin where correo ='{correo}' and contrasenna = '{contrasenna}';";
+            string sql = $"select id, nombre, correo from usuarioadmin where correo ='{usuarioAdmin.correo}' and contrasenna = '{usuarioAdmin.contrasenna}';";
             string result = _db.ConvertDataTabletoString(sql) ;
             if (result=="[]")
             {
@@ -41,7 +42,7 @@ namespace Gestion_de_torneos.Controllers
         [HttpPost]
         public bool Post([FromBody] UsuarioAdmin usuarioAdmin)
         {
-            string sql = $"insert into usuarioadmin (nombre, correo, contrasenna) values ('"+usuarioAdmin.nombre+"','"+usuarioAdmin.correo+"','"+usuarioAdmin.contrasenna+"');";
+            string sql = $"insert into usuarioadmin (nombre, correo, contrasenna) values ('"+usuarioAdmin.nombre+"','"+usuarioAdmin.correo+"','"+ usuarioAdmin.contrasenna+"');";
             string result = _db.executeSql(sql);
             if (result == "Correct")
             {
