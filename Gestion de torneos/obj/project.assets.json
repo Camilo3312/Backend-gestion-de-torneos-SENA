@@ -7670,19 +7670,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\adsi\\.nuget\\packages\\": {}
+    "C:\\Users\\Camilo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\adsi\\Desktop\\Nueva carpeta\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj",
+      "projectUniqueName": "C:\\Users\\Camilo\\Desktop\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj",
       "projectName": "Gestion de torneos",
-      "projectPath": "C:\\Users\\adsi\\Desktop\\Nueva carpeta\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj",
-      "packagesPath": "C:\\Users\\adsi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\adsi\\Desktop\\Nueva carpeta\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\obj\\",
+      "projectPath": "C:\\Users\\Camilo\\Desktop\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj",
+      "packagesPath": "C:\\Users\\Camilo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Camilo\\Desktop\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\adsi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Camilo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7757,7 +7757,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   },
