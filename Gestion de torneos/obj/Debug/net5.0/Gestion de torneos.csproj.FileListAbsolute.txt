@@ -291,7 +291,6 @@ C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\D
 C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\Debug\net5.0\Gestion de torneos.runtimeconfig.json
 C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\Debug\net5.0\Gestion de torneos.runtimeconfig.dev.json
 C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\Debug\net5.0\Gestion de torneos.dll
-C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\Debug\net5.0\ref\Gestion de torneos.dll
 C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\Debug\net5.0\Gestion de torneos.pdb
 C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\Debug\net5.0\BouncyCastle.Crypto.dll
 C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\Debug\net5.0\Dapper.dll
@@ -422,7 +421,6 @@ C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\obj\D
 C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\obj\Debug\net5.0\Gestion de torneos.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\obj\Debug\net5.0\Gestion de torneos.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\obj\Debug\net5.0\staticwebassets\Gestion de torneos.StaticWebAssets.Manifest.cache
-C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\obj\Debug\net5.0\staticwebassets\Gestion de torneos.StaticWebAssets.xml
 C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\obj\Debug\net5.0\scopedcss\bundle\Gestion de torneos.styles.css
 C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\obj\Debug\net5.0\Gestion de torneos.RazorTargetAssemblyInfo.cache
 C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\obj\Debug\net5.0\Gestion de torneos.dll
@@ -575,3 +573,6 @@ C:\Users\adsi\Desktop\TorneoSena\Backend-gestion-de-torneos-SENA\Gestion de torn
 C:\Users\adsi\Desktop\TorneoSena\Backend-gestion-de-torneos-SENA\Gestion de torneos\obj\Debug\net5.0\Gestion de torneos.pdb
 C:\Users\adsi\Desktop\TorneoSena\Backend-gestion-de-torneos-SENA\Gestion de torneos\obj\Debug\net5.0\Gestion de torneos.genruntimeconfig.cache
 C:\Users\adsi\Desktop\TorneoSena\Backend-gestion-de-torneos-SENA\Gestion de torneos\obj\Debug\net5.0\ref\Gestion de torneos.dll
+C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\Debug\net5.0\Gestion de torneos.StaticWebAssets.xml
+C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\obj\Debug\net5.0\Gestion de torneos.csproj.CopyComplete
+C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\obj\Debug\net5.0\refint\Gestion de torneos.dll
