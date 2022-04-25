@@ -308,7 +308,6 @@ C:\Users\mjhon\OneDrive\Escritorio\Torneo sena\Backend-gestion-de-torneos-SENA\G
 C:\Users\mjhon\OneDrive\Escritorio\Torneo sena\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\Debug\net6.0\Gestion de torneos.deps.json
 C:\Users\mjhon\OneDrive\Escritorio\Torneo sena\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\Debug\net6.0\Gestion de torneos.runtimeconfig.json
 C:\Users\mjhon\OneDrive\Escritorio\Torneo sena\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\Debug\net6.0\Gestion de torneos.dll
-C:\Users\mjhon\OneDrive\Escritorio\Torneo sena\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\Debug\net6.0\ref\Gestion de torneos.dll
 C:\Users\mjhon\OneDrive\Escritorio\Torneo sena\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\Debug\net6.0\Gestion de torneos.pdb
 C:\Users\mjhon\OneDrive\Escritorio\Torneo sena\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\Debug\net6.0\BouncyCastle.Crypto.dll
 C:\Users\mjhon\OneDrive\Escritorio\Torneo sena\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\Debug\net6.0\Dapper.dll
@@ -611,3 +610,5 @@ C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\obj\D
 C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\obj\Debug\net6.0\Gestion de torneos.genruntimeconfig.cache
 C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\obj\Debug\net6.0\ref\Gestion de torneos.dll
 C:\Users\Camilo\Desktop\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\mjhon\OneDrive\Escritorio\Torneo Sena\Backend-gestion-de-torneos-SENA\Gestion de torneos\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\mjhon\OneDrive\Escritorio\Torneo Sena\Backend-gestion-de-torneos-SENA\Gestion de torneos\obj\Debug\net6.0\refint\Gestion de torneos.dll

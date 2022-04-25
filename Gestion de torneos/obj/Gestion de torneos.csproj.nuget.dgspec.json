@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Camilo\\Desktop\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj": {}
+    "C:\\Users\\mjhon\\OneDrive\\Escritorio\\Torneo Sena\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Camilo\\Desktop\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj": {
+    "C:\\Users\\mjhon\\OneDrive\\Escritorio\\Torneo Sena\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Camilo\\Desktop\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj",
+        "projectUniqueName": "C:\\Users\\mjhon\\OneDrive\\Escritorio\\Torneo Sena\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj",
         "projectName": "Gestion de torneos",
-        "projectPath": "C:\\Users\\Camilo\\Desktop\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj",
-        "packagesPath": "C:\\Users\\Camilo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Camilo\\Desktop\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\obj\\",
+        "projectPath": "C:\\Users\\mjhon\\OneDrive\\Escritorio\\Torneo Sena\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj",
+        "packagesPath": "C:\\Users\\mjhon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mjhon\\OneDrive\\Escritorio\\Torneo Sena\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Camilo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mjhon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -97,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

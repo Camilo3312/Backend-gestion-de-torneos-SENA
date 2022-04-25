@@ -28,27 +28,28 @@ namespace Gestion_de_torneos.Controllers
         {
             try
             {
-                string path = $"C:\\Users\\mjhon\\OneDrive\\Escritorio\\Torneo sena\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\ArchivosCSV\\"+files.FileName;
+                var path =  System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\ArchivosCSV\" + files.Name);
                 using (var stream = System.IO.File.Create(path))
                 {
                     files.CopyToAsync(stream);
                 }
-                string filepath = $"C:\\Users\\mjhon\\OneDrive\\Escritorio\\Torneo sena\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\ArchivosCSV\\" + files.FileName;
+                string filepath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\ArchivosCSV\" + files.Name);
                 System.IO.StreamReader archivo = new System.IO.StreamReader(filepath);
                 string separado = ",";
-                string liena;
+                string linea;
                 archivo.ReadLine();
-                while ((liena = archivo.ReadLine()) != null)
+                while ((linea = archivo.ReadLine()) != null)
                 {
-                    string[] fila = liena.Split(separado);
+                    string[] fila = linea.Split(separado);
                     string nombre = fila[0];
                     string ficha = fila[1];
                     string jornada = fila[2];
                     string estado = fila[3];
                     string sql = $"Insert into participantes (nombre, ficha, jornada, estado) values ('" + nombre + "','" + ficha + "','" + jornada + "','" + estado + "');";
                     string result = _db.executeSql(sql);
-                    return Content(result);
                 }
+                return Content("Correct");
+
             }
             catch (Exception ex)
             {
