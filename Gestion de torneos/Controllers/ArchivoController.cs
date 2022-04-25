@@ -28,12 +28,12 @@ namespace Gestion_de_torneos.Controllers
         {
             try
             {
-                var path = Environment.CurrentDirectory + @"\ArchivosCSV\" + files.Name;
+                var path = Environment.CurrentDirectory + @"\ArchivosCSV\" + files.FileName;
                 using (var stream = System.IO.File.Create(path))
                 {
                     files.CopyToAsync(stream);
                 }
-                string filepath = Environment.CurrentDirectory + @"\ArchivosCSV\" + files.Name;
+                string filepath = Environment.CurrentDirectory + @"\ArchivosCSV\" + files.FileName;
                 System.IO.StreamReader archivo = new System.IO.StreamReader(filepath);
                 string separado = ",";
                 string linea;
@@ -49,7 +49,6 @@ namespace Gestion_de_torneos.Controllers
                     string result = _db.executeSql(sql);
                 }
                 return Content("Correct");
-
             }
             catch (Exception ex)
             {

@@ -19,8 +19,8 @@ namespace Gestion_de_torneos.Controllers
             string sqlequipos = "select count(*) from equipos;";
             string result2 = _db.ConvertDataTabletoString(sqlequipos);
             string sqlfecha = "select fechainicio from torneos;";
-            string result3 = _db.ConvertDataTabletoString(sqlequipos);
-            return "";
+            string result3 = _db.ConvertDataTabletoString(sqlfecha); 
+            return result1 + result2 + result3;
         }
 
         // GET api/<EstadisticasController>/5
