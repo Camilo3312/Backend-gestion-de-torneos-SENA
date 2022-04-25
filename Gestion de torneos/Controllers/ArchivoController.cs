@@ -28,12 +28,12 @@ namespace Gestion_de_torneos.Controllers
         {
             try
             {
-                var path =  System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\ArchivosCSV\" + files.Name);
+                var path = Environment.CurrentDirectory + @"\ArchivosCSV\" + files.Name;
                 using (var stream = System.IO.File.Create(path))
                 {
                     files.CopyToAsync(stream);
                 }
-                string filepath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\ArchivosCSV\" + files.Name);
+                string filepath = Environment.CurrentDirectory + @"\ArchivosCSV\" + files.Name;
                 System.IO.StreamReader archivo = new System.IO.StreamReader(filepath);
                 string separado = ",";
                 string linea;
