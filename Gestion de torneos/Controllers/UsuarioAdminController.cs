@@ -14,7 +14,6 @@ namespace Gestion_de_torneos.Controllers
     {
         MySqlDatabase _db = new MySqlDatabase();
         UsuarioAdmin _usuarioadmin = new UsuarioAdmin();
-        // GET: api/<UsuarioAdminController>
         [HttpGet]
         public string Get([FromQuery] UsuarioAdmin usuarioAdmin)
         {
@@ -31,14 +30,6 @@ namespace Gestion_de_torneos.Controllers
 
         }
 
-        // GET api/<UsuarioAdminController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<UsuarioAdminController>
         [HttpPost]
         public bool Post([FromBody] UsuarioAdmin usuarioAdmin)
         {
@@ -54,16 +45,5 @@ namespace Gestion_de_torneos.Controllers
             }
         }
 
-        // PUT api/<UsuarioAdminController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<UsuarioAdminController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

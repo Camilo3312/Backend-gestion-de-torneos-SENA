@@ -25,14 +25,13 @@ namespace Gestion_de_torneos.Controllers
         public IActionResult Get(int id)
         {
             string query = @"
-                            select pd.fechaencuentro, e.id, e.imagen, e.nombreequipo, e.jornada ,t.nombretorneo , pd.idganador, 
-                            (select nombreequipo from equipos where id = pd.idganador) as nombreganador, l.id 
-                            from partidos pd 
-                            inner join equipos_partidos ep on pd.id = ep.partido
-                            inner join equipos e on ep.equipo = e.id
-                            inner join torneos t on e.torneo = t.id
-                            right join liguilla l on e.id = l.id
-                            where  e.torneo = @id
+                            select pd.id, pd.fechaencuentro, e.id as idequipo1, substring_index(GROUP_CONCAT(e.id),',', -1) as idequipo2, e.nombreequipo as equipo1, substring_index(GROUP_CONCAT(e.nombreequipo),',', -1) as equipo2, e.jornada ,t.nombretorneo , pd.idganador, l.id as idliguilla
+                            from equipos_partidos ep inner join partidos pd on ep.partido = pd.id
+                            right join equipos e on ep.equipo = e.id
+                            inner join liguilla l on e.liguilla = l.id
+                            right join torneos t on e.torneo = t.id
+                            where e.torneo = @id
+                            group by pd.id
                            ";
             var result = _db.Get(query, new { id = id });
             return Ok(result);
