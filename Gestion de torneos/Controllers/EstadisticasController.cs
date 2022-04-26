@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using work4hours_modules_backend.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -14,13 +15,9 @@ namespace Gestion_de_torneos.Controllers
         [HttpGet]
         public string Get()
         {
-            string sqlparticipantes = "select count(*) from participantes;";
-            string result1 = _db.ConvertDataTabletoString(sqlparticipantes);
-            string sqlequipos = "select count(*) from equipos;";
-            string result2 = _db.ConvertDataTabletoString(sqlequipos);
-            string sqlfecha = "select fechainicio from torneos;";
-            string result3 = _db.ConvertDataTabletoString(sqlfecha); 
-            return result1 + result2 + result3;
+            string sqlEstadisticas = "select count(*) as participantes, (select count(e.id)  from equipos e) as equipos, (select count(fechainicio)  from torneos where fechainicio<current_date()) as fechasJugadas, (select count(fechainicio)  from torneos where fechainicio>current_date()) as fechasPorJugar from participantes;";
+            string result1 = _db.ConvertDataTabletoString(sqlEstadisticas);
+            return result1;
         }
 
         // GET api/<EstadisticasController>/5
