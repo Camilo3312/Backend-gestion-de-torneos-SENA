@@ -28,7 +28,7 @@ namespace Gestion_de_torneos.Controllers
             _configuration = configuration;
         }
         [HttpPost]
-        public string Post([FromBody] LoginData login_data)
+        public IActionResult Post([FromBody] LoginData login_data)
         {
             var secretKey = _configuration.GetValue<string>("SecretKey");
             var key = Encoding.ASCII.GetBytes(secretKey);
@@ -38,7 +38,7 @@ namespace Gestion_de_torneos.Controllers
             string result = _db.ConvertDataTabletoString(query);
             if (result == "[]")
             {
-                return " { isAuth : false } ";
+                return BadRequest(new { isAuth = false });
             }
             else
             {
@@ -55,7 +55,7 @@ namespace Gestion_de_torneos.Controllers
                 var createdToken = tokenHandler.CreateToken(tokenDescriptor);
                 var token = tokenHandler.WriteToken(createdToken);
 
-                return @"{ isAuth: true, data: " + result + ", token: " + token + "}";
+                return Ok(new { isAuth = true, data = result , token = token  });
             }
         }
     }
