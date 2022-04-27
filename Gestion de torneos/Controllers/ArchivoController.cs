@@ -27,9 +27,11 @@ namespace Gestion_de_torneos.Controllers
         public ActionResult PostArchivos([FromForm]IFormFile files)
         {
             var sql = "";
+            var selectSql = "";
             var equipoNuevo = "";
             var equipoAnterior = "";
             var cantidadEquipos = 0;
+            var contador = 0;
 
             try
             {
@@ -44,6 +46,7 @@ namespace Gestion_de_torneos.Controllers
                 string linea;
                 archivo.ReadLine();
                 sql += $"insert into torneos (idusuarioadmin, totalparticipantes, nombretorneo, tipotorneo, fechainicio) values (2,33,'Prueba',1,'2022-04-25');";
+                sql += "insert into liguilla (jornada) values (4);";
                 while ((linea = archivo.ReadLine()) != null)
                 {
                     string[] fila = linea.Split(separado);
@@ -53,23 +56,45 @@ namespace Gestion_de_torneos.Controllers
                     string estado = fila[3];
                     string nombreequipo = fila[4];
                     equipoNuevo = nombreequipo;
+                    
+
                     if (equipoNuevo != equipoAnterior)
                     {
+                        if (contador == 4)
+                        {
+                            contador = 0;
+                            sql += "insert into liguilla (jornada) values (4);";
+                        }
+                        contador++;
+
                         equipoAnterior = nombreequipo;
                         cantidadEquipos++;
-                        while (cantidadEquipos % 2 == 0)
-                        {
-                        }
-                        sql += $"insert into liguilla (jornada) values (1);";
-                        sql += $"insert into equipos (imagen, jornada, torneo, cantidadfaltas, nombreequipo, golesafavor, golesencontra, cantidadexpulciones, partidosganados,  partidosperdidos, liguilla) values (null, 1,  (select max(t.id) from torneos t), 0, '{nombreequipo}', 5,7,0,3,4,1);";
+
+                        sql += $"insert into equipos (imagen, jornada, torneo, cantidadfaltas, nombreequipo, golesafavor, golesencontra, cantidadexpulciones, partidosganados,  partidosperdidos, liguilla) values (null, 1,  (select max(t.id) from torneos t), 0, '{nombreequipo}', 5,7,0,3,4,(select max(l.id) from liguilla l) );";
                     }
                     sql += $"insert into participantes (nombre, ficha, jornada, estado, equipo) values ('{nombre}', '{ficha}', {jornada}, {estado}, (select max(e.id) from equipos e) );";
                 }
-                //string result = _db.executeSql(sql);
-                //var number = archivo.Count;
-                //return Content(number);
 
+
+                //var result = _db.ConvertDataTabletoList("select count(id) as cantidad from equipos where torneo = (select max(t.id) from torneos t );")[0];
+                //var cantidad = result.GetValueOrDefault("cantidad");
+                //_db.ConvertDataTabletoList("insert into liguilla (jornada) values (4);");
+                //var contador = 0;
+                //for (int i = 1; i <= Convert.ToInt32(cantidad); i++)
+                //{
+                //    if (contador == 4)
+                //    {
+                //        contador = 0;
+                //        _db.ConvertDataTabletoList("insert into liguilla (jornada) values (4);");
+                //    }
+                //    contador++;
+                //    sql += $"update equipos set liguilla = (select max(l.id) from liguilla) where id in(select id from equipos where torneo = (select max(t.id) from torneo t) limit 0,4);";
+                //}
+
+                _db.executeSql(sql);
+                return Content("Correct");
             }
+
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);

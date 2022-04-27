@@ -75,6 +75,34 @@ namespace work4hours_modules_backend.Models
                 }
             }
         }
+
+        public List<Dictionary<string, object>> ConvertDataTabletoList(string sql)
+        {
+            DataTable dt = new DataTable();
+            using (connection)
+            {
+                using (MySqlCommand cmd = new MySqlCommand(sql, connection))
+                {
+                    connection.Open();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(dt);
+                    JavaScriptSerializer serializer = new JavaScriptSerializer();
+                    List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
+                    Dictionary<string, object> row;
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        row = new Dictionary<string, object>();
+                        foreach (DataColumn col in dt.Columns)
+                        {
+                            row.Add(col.ColumnName, dr[col]);
+                        }
+                        rows.Add(row);
+                    }
+                    return rows;
+                }
+            }
+        }
+
         public IEnumerable Get(string query, object datas = null)
         {
             return connection.Query(query, datas);

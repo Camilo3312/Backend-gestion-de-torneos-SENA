@@ -20,6 +20,7 @@ namespace Gestion_de_torneos.Controllers
                             from liguilla l inner join equipos e on l.id = e.liguilla 
                             where e.torneo = @id 
                             group by l.id;
+                            order by e.partidosganados desc;
                            ";
             return Ok(_db.Get(script, new { id = id }));
         }
