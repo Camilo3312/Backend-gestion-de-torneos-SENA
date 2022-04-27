@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using work4hours_modules_backend.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,6 +13,7 @@ namespace Gestion_de_torneos.Controllers
     [ApiController]
     public class PartidosController : ControllerBase
     {
+        MySqlDatabase _db = new MySqlDatabase();
         // GET: api/<PartidosController>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -36,8 +38,20 @@ namespace Gestion_de_torneos.Controllers
 
         // PUT api/<PartidosController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public ActionResult Put(int id, [FromQuery] string idganador)
         {
+            string sql = $"update partidos set idganador = {idganador} where id = {id} ;";
+            string result = _db.executeSql(sql);
+            string sqlganador = $"update equipos set partidosganados = partidosganados + 1 where id = {idganador};";
+            string resultGanador = _db.executeSql(sqlganador);
+            if (result == resultGanador)
+            {
+                return Ok("Correct");
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
         // DELETE api/<PartidosController>/5
