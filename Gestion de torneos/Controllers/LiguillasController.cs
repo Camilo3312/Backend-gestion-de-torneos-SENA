@@ -19,7 +19,7 @@ namespace Gestion_de_torneos.Controllers
                             select l.id, count(e.id) as equipos, (select e.nombreequipo from equipos e where e.partidosganados * 3 = (select max(e.partidosganados * 3)  from equipos e ) ) as equipotop 
                             from liguilla l inner join equipos e on l.id = e.liguilla 
                             where e.torneo = @id 
-                            group by l.id;
+                            group by l.id
                             order by e.partidosganados desc;
                            ";
             return Ok(_db.Get(script, new { id = id }));

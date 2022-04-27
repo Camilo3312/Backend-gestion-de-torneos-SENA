@@ -38,6 +38,7 @@ namespace Gestion_de_torneos.Controllers
             string result = _db.ConvertDataTabletoString(query);
             if (result == "[]")
             {
+                
                 return BadRequest(new { isAuth = false });
             }
             else
@@ -54,8 +55,14 @@ namespace Gestion_de_torneos.Controllers
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var createdToken = tokenHandler.CreateToken(tokenDescriptor);
                 var token = tokenHandler.WriteToken(createdToken);
-
-                return Ok(new { isAuth = true, data = result , token = token  });
+                var infouser = _db.GetUserId(query);
+                var iduser = 0;
+                foreach (LoginData item in infouser)
+                {
+                    iduser = item.id;
+                }
+                var torneos = _db.Get("select t.id from torneos t inner join usuarioadmin u on u.id = t.idusuarioadmin where u.id = @id", new { id = iduser });
+                return Ok(new { isAuth = true, data = infouser, token = token, torneos = torneos });
             }
         }
     }

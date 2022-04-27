@@ -1,5 +1,6 @@
 ﻿using Backend_API_Torneos.Models;
 using Dapper;
+using Gestion_de_torneos.Controllers;
 using Microsoft.AspNetCore.Http;
 using MySql.Data.MySqlClient;
 using Nancy.Json;
@@ -106,6 +107,11 @@ namespace work4hours_modules_backend.Models
         public IEnumerable Get(string query, object datas = null)
         {
             return connection.Query(query, datas);
+        }
+
+        public IEnumerable<LoginData> GetUserId(string query, object datas = null)
+        {
+            return connection.Query<LoginData>(query, datas);
         }
 
         public async Task<bool> Post(string query, object datas = null)
