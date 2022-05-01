@@ -63,16 +63,17 @@ namespace Gestion_de_torneos.Controllers
                         if (contador == 4)
                         {
                             contador = 0;
-                            sql += "insert into liguilla (jornada) values (4);";
+                            sql += $"insert into liguilla (jornada) values ({Convert.ToInt32(jornada)});";
                         }
                         contador++;
 
                         equipoAnterior = nombreequipo;
                         cantidadEquipos++;
 
-                        sql += $"insert into equipos (imagen, jornada, torneo, cantidadfaltas, nombreequipo, golesafavor, golesencontra, cantidadexpulciones, partidosganados,  partidosperdidos, liguilla) values (null, 1,  (select max(t.id) from torneos t), 0, '{nombreequipo}', 5,7,0,3,4,(select max(l.id) from liguilla l) );";
+                        sql += $"insert into equipos (imagen, jornada, torneo, cantidadfaltas, nombreequipo, golesafavor, golesencontra, cantidadexpulciones, partidosganados,  partidosperdidos, liguilla) values (null, {jornada},  (select max(t.id) from torneos t), 0, '{nombreequipo}', 0,0,0,0,0,(select max(l.id) from liguilla l) );";
                     }
                     sql += $"insert into participantes (nombre, ficha, jornada, estado, equipo) values ('{nombre}', '{ficha}', {jornada}, {estado}, (select max(e.id) from equipos e) );";
+                
                 }
 
 
@@ -90,7 +91,7 @@ namespace Gestion_de_torneos.Controllers
                 //    contador++;
                 //    sql += $"update equipos set liguilla = (select max(l.id) from liguilla) where id in(select id from equipos where torneo = (select max(t.id) from torneo t) limit 0,4);";
                 //}
-
+                sql += "call myproc();";
                 _db.executeSql(sql);
                 return Content("Correct");
             }
