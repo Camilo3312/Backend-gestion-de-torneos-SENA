@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FPvGZ8mQmE6UmsTE7hzv7wynIh5ida8iCi9uC7f92O2++dcqAXujM5F6itkIjWQWvD8LybjHIQKgVycjgK7bsQ==",
+  "dgSpecHash": "c8AEQCOe6qborf7GJwYzAKqCXAN4HTDCyugV8eFLW9s8gPyhSdSlnkaHbhpeMgO1NA7hhoIQySHViDnOTD9YWg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hp ryzen 5\\Desktop\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj",
+  "projectFilePath": "C:\\Users\\hp ryzen 5\\Desktop\\Backend-gestion-de-torneos-SENA\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hp ryzen 5\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\hp ryzen 5\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",

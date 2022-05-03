@@ -16,9 +16,9 @@ namespace Gestion_de_torneos.Controllers
         public IActionResult Get(int id)
         {
             string script = @"
-                            select l.id, count(e.id) as equipos, (select e.nombreequipo from equipos e where e.partidosganados * 3 = (select max(e.partidosganados * 3)  from equipos e ) ) as equipotop 
+                            select l.id, count(e.id) as equipos, (select e.nombreequipo from equipos e where e.partidosganados * 3 = (select max(e.partidosganados * 3)  from equipos e where e.liguilla = l.id ) order by e.partidosperdidos asc, e.partidosganados asc limit 1 ) as equipotop 
                             from liguilla l inner join equipos e on l.id = e.liguilla 
-                            where e.torneo = @id 
+                            where e.torneo = @id
                             group by l.id
                             order by e.partidosganados desc;
                            ";

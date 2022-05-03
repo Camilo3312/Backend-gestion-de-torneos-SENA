@@ -72,6 +72,7 @@ namespace work4hours_modules_backend.Models
                         }
                         rows.Add(row);
                     }
+                    connection.Close();
                     return serializer.Serialize(rows);
                 }
             }

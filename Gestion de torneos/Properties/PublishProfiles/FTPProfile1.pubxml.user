@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <_PublishTargetUrl>ftp://198.37.116.25/www.AGTSENA.somee.com</_PublishTargetUrl>
+    <History>False|2022-05-03T15:30:44.4096599Z;False|2022-05-03T10:24:11.5257065-05:00;</History>
+  </PropertyGroup>
+</Project>

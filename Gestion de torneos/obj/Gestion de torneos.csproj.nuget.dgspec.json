@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hp ryzen 5\\Desktop\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj": {}
+    "C:\\Users\\hp ryzen 5\\Desktop\\Backend-gestion-de-torneos-SENA\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hp ryzen 5\\Desktop\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj": {
+    "C:\\Users\\hp ryzen 5\\Desktop\\Backend-gestion-de-torneos-SENA\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp ryzen 5\\Desktop\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj",
+        "projectUniqueName": "C:\\Users\\hp ryzen 5\\Desktop\\Backend-gestion-de-torneos-SENA\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj",
         "projectName": "Gestion de torneos",
-        "projectPath": "C:\\Users\\hp ryzen 5\\Desktop\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj",
+        "projectPath": "C:\\Users\\hp ryzen 5\\Desktop\\Backend-gestion-de-torneos-SENA\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\Gestion de torneos.csproj",
         "packagesPath": "C:\\Users\\hp ryzen 5\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp ryzen 5\\Desktop\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\obj\\",
+        "outputPath": "C:\\Users\\hp ryzen 5\\Desktop\\Backend-gestion-de-torneos-SENA\\Backend-gestion-de-torneos-SENA\\Gestion de torneos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

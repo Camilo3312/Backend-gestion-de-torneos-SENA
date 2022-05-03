@@ -37,21 +37,15 @@ namespace Gestion_de_torneos.Controllers
         }
 
         // PUT api/<PartidosController>/5
-        [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromQuery] string idganador)
+        [HttpPut("resultado/{idpartido}/{idequipogandor}/{idequipoperdedor}/{golesganador}/{golesperdedor}")]
+        public ActionResult Put(int idpartido, int idequipogandor, int idequipoperdedor, int golesganador, int golesperdedor)
         {
-            string sql = $"update partidos set idganador = {idganador} where id = {id} ;";
-            string result = _db.executeSql(sql);
-            string sqlganador = $"update equipos set partidosganados = partidosganados + 1 where id = {idganador};";
-            string resultGanador = _db.executeSql(sqlganador);
-            if (result == resultGanador)
-            {
-                return Ok("Correct");
-            }
-            else
-            {
-                return BadRequest();
-            }
+            string sql = "";
+            sql += $"update partidos set idganador = {idequipogandor} where id = {idpartido} ;";
+            sql += $"update equipos set partidosganados = (partidosganados + 1), golesafavor = (golesafavor + {golesganador}), golesencontra = (golesencontra + {golesperdedor}) where id = {idequipogandor} ;";
+            sql += $"update equipos set partidosperdidos = (partidosperdidos + 1), golesafavor = (golesafavor + {golesperdedor}), golesencontra = (golesencontra + {golesganador}) where id = {idequipoperdedor} ;";
+            var resultGanador = _db.executeSql(sql);
+            return Ok(resultGanador);
         }
 
         // DELETE api/<PartidosController>/5
