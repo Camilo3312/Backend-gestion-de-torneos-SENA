@@ -34,6 +34,8 @@ namespace Gestion_de_torneos.Controllers
         public bool Post([FromBody] UsuarioAdmin usuarioAdmin)
         {
             string sql = $"insert into usuarioadmin (nombre, correo, contrasenna) values ('"+usuarioAdmin.nombre+"','"+usuarioAdmin.correo+"','"+ usuarioAdmin.contrasenna+"');";
+            sql += $"insert into torneos (idusuarioadmin, totalparticipantes, nombretorneo, tipotorneo, fechainicio) values ((select max(u.id) from usuarioadmin u ),null,'{usuarioAdmin.nombretorneo}',{usuarioAdmin.tipotorneo},CURDATE());";
+
             string result = _db.executeSql(sql);
             if (result == "Correct")
             {

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Web_API;
 using work4hours_modules_backend.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -22,8 +23,8 @@ namespace Gestion_de_torneos.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        [HttpPost("{nombretorneo}/{cantparticipantes}/{tipotorneo}")]
-        public ActionResult PostArchivos([FromForm]IFormFile files, string nombretorneo, string cantparticipantes, string tipotorneo)
+        [HttpPost("{nombreusuario}/{correo}/{contrasenna}/{nombretorneo}/{tipotorneo}")]
+        public ActionResult PostArchivos([FromForm]IFormFile files,string nombreusuario, string correo, string contrasenna, string nombretorneo, string tipotorneo)
         {
             var sql = "";
             var selectSql = "";
@@ -31,6 +32,9 @@ namespace Gestion_de_torneos.Controllers
             var equipoAnterior = "";
             var cantidadEquipos = 0;
             var contador = 0;
+
+            sql = $"insert into usuarioadmin (nombre, correo, contrasenna) values ('{nombreusuario}', '{correo}', '{Encrypt.GetSHA256(contrasenna)}');";
+            sql += $"insert into torneos (idusuarioadmin, totalparticipantes, nombretorneo, tipotorneo, fechainicio) values ((select max(u.id) from usuarioadmin u ),null,'{nombretorneo}',{tipotorneo},CURDATE());";
 
             try
             {
@@ -44,7 +48,6 @@ namespace Gestion_de_torneos.Controllers
                 string separado = ",";
                 string linea;
                 archivo.ReadLine();
-                sql += $"insert into torneos (idusuarioadmin, totalparticipantes, nombretorneo, tipotorneo, fechainicio) values ((select max(u.id) from usuarioadmin u ),{cantparticipantes},'{nombretorneo}',{tipotorneo},CURDATE());";
                 sql += "insert into liguilla (jornada) values (1);";
                 while ((linea = archivo.ReadLine()) != null)
                 {
