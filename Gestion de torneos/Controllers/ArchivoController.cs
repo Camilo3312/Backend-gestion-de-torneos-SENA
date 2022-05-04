@@ -22,9 +22,8 @@ namespace Gestion_de_torneos.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        // POST api/<ArchivoController>
-        [HttpPost]
-        public ActionResult PostArchivos([FromForm]IFormFile files)
+        [HttpPost("{nombretorneo}/{cantparticipantes}/{tipotorneo}")]
+        public ActionResult PostArchivos([FromForm]IFormFile files, string nombretorneo, string cantparticipantes, string tipotorneo)
         {
             var sql = "";
             var selectSql = "";
@@ -45,8 +44,8 @@ namespace Gestion_de_torneos.Controllers
                 string separado = ",";
                 string linea;
                 archivo.ReadLine();
-                sql += $"insert into torneos (idusuarioadmin, totalparticipantes, nombretorneo, tipotorneo, fechainicio) values (2,33,'Prueba',1,'2022-04-25');";
-                sql += "insert into liguilla (jornada) values (4);";
+                sql += $"insert into torneos (idusuarioadmin, totalparticipantes, nombretorneo, tipotorneo, fechainicio) values ((select max(u.id) from usuarioadmin u ),{cantparticipantes},'{nombretorneo}',{tipotorneo},CURDATE());";
+                sql += "insert into liguilla (jornada) values (1);";
                 while ((linea = archivo.ReadLine()) != null)
                 {
                     string[] fila = linea.Split(separado);
@@ -75,23 +74,11 @@ namespace Gestion_de_torneos.Controllers
                     sql += $"insert into participantes (nombre, ficha, jornada, estado, equipo) values ('{nombre}', '{ficha}', {jornada}, {estado}, (select max(e.id) from equipos e) );";
                 
                 }
-
-
-                //var result = _db.ConvertDataTabletoList("select count(id) as cantidad from equipos where torneo = (select max(t.id) from torneos t );")[0];
-                //var cantidad = result.GetValueOrDefault("cantidad");
-                //_db.ConvertDataTabletoList("insert into liguilla (jornada) values (4);");
-                //var contador = 0;
-                //for (int i = 1; i <= Convert.ToInt32(cantidad); i++)
-                //{
-                //    if (contador == 4)
-                //    {
-                //        contador = 0;
-                //        _db.ConvertDataTabletoList("insert into liguilla (jornada) values (4);");
-                //    }
-                //    contador++;
-                //    sql += $"update equipos set liguilla = (select max(l.id) from liguilla) where id in(select id from equipos where torneo = (select max(t.id) from torneo t) limit 0,4);";
-                //}
                 sql += "call myproc();";
+
+                archivo.Close();
+                System.IO.File.Delete(path);
+
                 _db.executeSql(sql);
                 return Content("Correct");
             }
